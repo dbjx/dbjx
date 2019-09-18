@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>导航条下拉菜单</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #F3F3F3;
+            font-size: 14px;
+            min-width: 1200px;
+            color: #333333;
+        }
+        .main{
+            background-color: #FD463E;
+            position: relative;
+            color: #ffffff;
+            min-width: 1200px;
+            height: 64px;
+        }
+        .main a{
+            display: block;
+            text-decoration: none;
+        }
+        .main .nav_list{
+            position: absolute;
+            top: 0;
+            left: 300px;
+            z-index: 1;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 1200px;
+            overflow: hidden;
+            height: 64px;
+        }
+        .main .nav_list li{
+            padding: 0;
+            float: left;
+            margin: 0;
+            width: 120px;
+            text-align: center;
+            height: 264px;
+        }
+        .main .nav_head{
+            height: 64px;
+            color: #ffffff;
+            font-size: 16px;
+            background-color: #FD463E;
+            text-align: center;
+            line-height: 64px;
+            margin: 0 auto;
+        }
+        .main .item{
+            height: 40px;
+            line-height: 40px;
+            color: #333333;
+            position: relative;
+        }
+        .main .item:hover{
+            width: 120px;
+            height: 40px;
+            background-color: aquamarine;
+        }
+        .main .nav_list:hover{
+            height: 264px;
+        }
+        .main .nav_list>li.right{
+            float: right;
+        }
+        .main .nav_list>li:hover{
+            background: antiquewhite;
+        }
+        @font-face {
+            font-family: 'iconfont';  /* project id 1401128 */
+            src: url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.eot');
+            src: url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.eot?#iefix') format('embedded-opentype'),
+            url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.woff2') format('woff2'),
+            url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.woff') format('woff'),
+            url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.ttf') format('truetype'),
+            url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.svg#iconfont') format('svg');
+        }
+        .iconfont{
+            font-family:"iconfont" !important;
+            font-size:16px;font-style:normal;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-stroke-width: 0.2px;
+            -moz-osx-font-smoothing: grayscale;}
+    </style>
+</head>
+<body>
+<nav class="main">
+    <ul class="nav_list">
+        <li class="menu">
+            <a class="nav_head" href="#">
+                <i class="iconfont">&#xe60f;</i>
+                <span>网站首页</span>
+            </a>
+            <a href="#" class="item">二级导航1</a>
+            <a href="#" class="item">二级导航2</a>
+            <a href="#" class="item">二级导航3</a>
+            <a href="#" class="item">二级导航4</a>
+            <a href="#" class="item">二级导航5</a>
+        </li>
+        <li class="menu">
+            <a class="nav_head" href="#">
+                <i class="iconfont">&#xe629;</i>
+                <span>在线下载</span>
+            </a>
+            <a href="#" class="item">二级导航1</a>
+            <a href="#" class="item">二级导航2</a>
+            <a href="#" class="item">二级导航3</a>
+        </li>
+        <li class="menu">
+            <a class="nav_head" href="#">
+                <i class="iconfont">&#xe607;</i>
+                <span>成功案例</span>
+            </a>
+            <a href="#" class="item">二级导航1</a>
+            <a href="#" class="item">二级导航2</a>
+            <a href="#" class="item">二级导航3</a>
+            <a href="#" class="item">二级导航4</a>
+            <a href="#" class="item">二级导航5</a>
+        </li>
+        <li class="menu">
+            <a class="nav_head" href="#">
+                <i class="iconfont">&#xe603;</i>
+                <span>新闻动态</span>
+            </a>
+            <a href="#" class="item">二级导航1</a>
+            <a href="#" class="item">二级导航2</a>
+            <a href="#" class="item">二级导航3</a>
+        </li>
+        <li class="menu">
+            <a class="nav_head" href="#">
+                <i class="iconfont">&#xe64b;</i>
+                <span>与我联系</span>
+            </a>
+            <a href="#" class="item">二级导航1</a>
+            <a href="#" class="item">二级导航2</a>
+        </li>
+        <li>
+            <a class="nav_head" href="#">
+                <i class="iconfont">&#xe62a;</i>
+                <span>关于我们</span>
+            </a>
+        </li>
+        <li class="menu right">
+            <a class="nav_head" href="#">
+                <i class="iconfont">&#xe650;</i>
+                <span>个人中心</span>
+            </a>
+            <a href="#" class="item">修改资料</a>
+            <a href="#" class="item">在线充值</a>
+            <a href="#" class="item">升级会员</a>
+            <a href="#" class="item">安全设置</a>
+            <a href="#" class="item">退出帐号</a>
+        </li>
+    </ul>
+</nav>
+</body>
+</html>
