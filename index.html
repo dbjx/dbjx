@@ -2,162 +2,197 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>导航条下拉菜单</title>
+    <title>QQ注册</title>
+    <!--js使用暂时不精通留待之后-->
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+    <script>
+        $(function () {
+            $("#top").validate({
+                rules: {
+                    username: {
+                        required: true,
+                        minlength: 2
+                    },
+                    password: {
+                        required: true,
+                        minlength: 5
+                    },
+                    phoneNum: {
+                        required: true,
+                        minlength: 6
+                    },
+                },
+                messages: {
+                    username: {
+                        required: "请输入用户名",
+                        minlength: "用户名必需由两个字母组成"
+                    },
+                    password: {
+                        required: "请输入密码",
+                        minlength: "密码长度不能小于 5 个字母"
+                    },
+                    phoneNum: {
+                        required: "请输入手机号码",
+                        minlength: "请输入正确的手机号码"
+                    },
+                }
+            });
+        })
+    </script>
     <style>
-        body{
-            margin: 0;
+        body {
             padding: 0;
-            background-color: #F3F3F3;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        #top input {
+            padding-left: 10px;
+        }
+
+        #top {
+            width: 100%;
+            padding-top: 20px;
+            padding-left: 180px;
+        }
+
+        #text1 {
+            font-size: 44px;
+            margin-bottom: 30px;
+        }
+
+        #text2 div {
+            font-size: 28px;
+            display: inline-block;
+        }
+
+        #text_div2 {
+            color: #359eff;
+            margin-left: 200px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        input {
+            border: 1px #aaa solid;
+            border-radius: 4px;
+            font-size: 20px;
+            height: 50px;
+        }
+
+        .input {
+            width: 500px;
+        }
+
+        .input_div {
+            margin-top: 30px;
+        }
+
+        #areaCode {
+            width: 120px;
+        }
+
+        #phone_div {
+            margin-top: 30px;
+        }
+
+        #phoneNum {
+            margin-left: 10px;
+            width: 354px;
+        }
+
+        #info {
             font-size: 14px;
-            min-width: 1200px;
-            color: #333333;
+            height: 14px;
+            color: #999;
+            margin-top: 7px;
         }
-        .main{
-            background-color: #FD463E;
-            position: relative;
-            color: #ffffff;
-            min-width: 1200px;
-            height: 64px;
+
+        #submit {
+            width: 510px;
+            border: 1px #3083ff solid;
+            background-color: #3487ff;
+            color: #fff;
+            margin-top: 40px;
         }
-        .main a{
+
+        #check {
+            margin-top: 30px;
+            height: 70px;
+            font-size: 13px;
+            color: #aaa;
+            margin-bottom: 60px;
+        }
+
+        #check div {
+            line-height: 30px;
+        }
+
+        #check input {
+            height: 21px;
+        }
+
+        #xieyi a {
             display: block;
-            text-decoration: none;
+            font-size: 14px;
+            line-height: 18px;
         }
-        .main .nav_list{
-            position: absolute;
-            top: 0;
-            left: 300px;
-            z-index: 1;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-            width: 1200px;
-            overflow: hidden;
-            height: 64px;
-        }
-        .main .nav_list li{
-            padding: 0;
-            float: left;
-            margin: 0;
-            width: 120px;
+
+        #footer {
             text-align: center;
-            height: 264px;
+            font-size: 14px;
+            color: #bbb;
+            font-weight: inherit;
+            margin-bottom: 40px;
         }
-        .main .nav_head{
-            height: 64px;
-            color: #ffffff;
-            font-size: 16px;
-            background-color: #FD463E;
-            text-align: center;
-            line-height: 64px;
-            margin: 0 auto;
-        }
-        .main .item{
-            height: 40px;
-            line-height: 40px;
-            color: #333333;
-            position: relative;
-        }
-        .main .item:hover{
-            width: 120px;
-            height: 40px;
-            background-color: aquamarine;
-        }
-        .main .nav_list:hover{
-            height: 264px;
-        }
-        .main .nav_list>li.right{
-            float: right;
-        }
-        .main .nav_list>li:hover{
-            background: antiquewhite;
-        }
-        @font-face {
-            font-family: 'iconfont';  /* project id 1401128 */
-            src: url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.eot');
-            src: url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.eot?#iefix') format('embedded-opentype'),
-            url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.woff2') format('woff2'),
-            url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.woff') format('woff'),
-            url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.ttf') format('truetype'),
-            url('//at.alicdn.com/t/font_1401128_wdcawnnpyvb.svg#iconfont') format('svg');
-        }
-        .iconfont{
-            font-family:"iconfont" !important;
-            font-size:16px;font-style:normal;
-            -webkit-font-smoothing: antialiased;
-            -webkit-text-stroke-width: 0.2px;
-            -moz-osx-font-smoothing: grayscale;}
     </style>
 </head>
 <body>
-<nav class="main">
-    <ul class="nav_list">
-        <li class="menu">
-            <a class="nav_head" href="#">
-                <i class="iconfont">&#xe60f;</i>
-                <span>网站首页</span>
-            </a>
-            <a href="#" class="item">二级导航1</a>
-            <a href="#" class="item">二级导航2</a>
-            <a href="#" class="item">二级导航3</a>
-            <a href="#" class="item">二级导航4</a>
-            <a href="#" class="item">二级导航5</a>
-        </li>
-        <li class="menu">
-            <a class="nav_head" href="#">
-                <i class="iconfont">&#xe629;</i>
-                <span>在线下载</span>
-            </a>
-            <a href="#" class="item">二级导航1</a>
-            <a href="#" class="item">二级导航2</a>
-            <a href="#" class="item">二级导航3</a>
-        </li>
-        <li class="menu">
-            <a class="nav_head" href="#">
-                <i class="iconfont">&#xe607;</i>
-                <span>成功案例</span>
-            </a>
-            <a href="#" class="item">二级导航1</a>
-            <a href="#" class="item">二级导航2</a>
-            <a href="#" class="item">二级导航3</a>
-            <a href="#" class="item">二级导航4</a>
-            <a href="#" class="item">二级导航5</a>
-        </li>
-        <li class="menu">
-            <a class="nav_head" href="#">
-                <i class="iconfont">&#xe603;</i>
-                <span>新闻动态</span>
-            </a>
-            <a href="#" class="item">二级导航1</a>
-            <a href="#" class="item">二级导航2</a>
-            <a href="#" class="item">二级导航3</a>
-        </li>
-        <li class="menu">
-            <a class="nav_head" href="#">
-                <i class="iconfont">&#xe64b;</i>
-                <span>与我联系</span>
-            </a>
-            <a href="#" class="item">二级导航1</a>
-            <a href="#" class="item">二级导航2</a>
-        </li>
-        <li>
-            <a class="nav_head" href="#">
-                <i class="iconfont">&#xe62a;</i>
-                <span>关于我们</span>
-            </a>
-        </li>
-        <li class="menu right">
-            <a class="nav_head" href="#">
-                <i class="iconfont">&#xe650;</i>
-                <span>个人中心</span>
-            </a>
-            <a href="#" class="item">修改资料</a>
-            <a href="#" class="item">在线充值</a>
-            <a href="#" class="item">升级会员</a>
-            <a href="#" class="item">安全设置</a>
-            <a href="#" class="item">退出帐号</a>
-        </li>
-    </ul>
-</nav>
+<form class="cmxform" id="top" method="get" action="">
+    <div>
+        <div id="text1">欢迎注册QQ</div>
+        <div id="text2">
+            <div id="text_div1">每一天乐在沟通</div>
+            <div id="text_div2">免费靓号</div>
+        </div>
+        <div class="input_div">
+            <input class="input" type="text" placeholder="昵称" name="username" id="username">
+        </div>
+        <div class="input_div">
+            <input class="input" type="password" placeholder="密码" name="password" id="password">
+        </div>
+
+        <div id="phone_div">
+            <input type="text" name="areaCode" id="areaCode" value="+86">
+            <input type="text" name="phoneNum" id="phoneNum" placeholder="手机号码">
+        </div>
+        <div id="info">可通过该手机号找回密码
+        </div>
+        <div>
+            <input type="submit" name="submit" id="submit" value="立即注册">
+        </div>
+
+        <div id="check">
+            <div>
+                <input type="checkbox">
+                <label>同时开通QQ空间</label>
+            </div>
+            <div>
+                <input type="checkbox">
+                <label>我已阅读并同意相关服务条款和隐私政策</label>
+                <div id="xieyi">
+                    <a href="">《QQ号码规则》</a>
+                    <a href="">《隐私政策》</a>
+                    <a href="">《QQ空间服务协议》</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<div id="footer">
+    Copyright © 1998-2018Tencent All Rights Reserved
+</div>
 </body>
 </html>
